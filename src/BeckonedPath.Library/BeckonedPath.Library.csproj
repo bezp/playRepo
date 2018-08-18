@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BeckonedPath.Data\BeckonedPath.Data.csproj" />
+  </ItemGroup>
+
 </Project>

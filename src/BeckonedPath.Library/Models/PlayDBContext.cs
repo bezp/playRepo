@@ -6,12 +6,23 @@ namespace BeckonedPath.Library.Models
 {
     public partial class PlayDBContext : DbContext
     {
+        public PlayDBContext()
+        {
+
+        }
+
+        public PlayDBContext(DbContextOptions<PlayDBContext> options) : base(options)
+        {
+
+        }
+
         public virtual DbSet<CommunityComments> CommunityComments { get; set; }
         public virtual DbSet<Communitys> Communitys { get; set; }
         public virtual DbSet<EventComments> EventComments { get; set; }
         public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<Friends> Friends { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+
 
 //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 //        {
