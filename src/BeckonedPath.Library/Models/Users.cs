@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace BeckonedPath.Library.Models
-{//=]
+{
     public partial class Users
     {
         public Users()
