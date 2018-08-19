@@ -27,6 +27,7 @@ namespace BeckonedPath.MvcClient
         {
 
             services.AddMvc();
+                    //.SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<PlayDBContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("PlayDB")));
         }

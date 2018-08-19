@@ -24,8 +24,42 @@ namespace BeckonedPath.MvcClient.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+
+
             ViewBag.PageTitle = userViewModel.PageTitle;
             ViewBag.asd = userViewModel;
+
+            //var user = from u in _db.Users
+            //               select u;
+            var x = _db.Users.FirstOrDefault();
+            ViewBag.DBStuff = x;
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Users users)
+        {
+            Users saveToDb = new Users()
+            {
+                FirstName = "bob",
+                LastName = "sirue",
+                Comment = "comment",
+                Email = "8ionkmill",
+                Event = "events",
+                FutureEvent = "asd",
+                PastEvent = "dsw"
+            };
+            _db.Add(saveToDb);
+            _db.SaveChanges();
+
+            if (ModelState.IsValid)
+            {
+                _db.Add(users);
+                _db.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+
             return View();
         }
     }

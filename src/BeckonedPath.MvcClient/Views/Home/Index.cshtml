@@ -1,4 +1,6 @@
-﻿<div class="jumbotron">
+﻿@model BeckonedPath.Library.Models.Users
+
+<div class="jumbotron">
     <h1>Beckoned Path</h1>
 </div>
 <div class="row">
@@ -10,6 +12,18 @@
         <div>
             @ViewBag.PageTitle
             @ViewBag.asd
+
+        </div>
+        <div>
+            @ViewBag.DBStuff
+            @ViewBag.DBStuff.FirstName
+            @ViewBag.DBStuff.FutureEvent
+            @ViewBag.DBStuff.Comment
+
+            @*@foreach (var item in ViewBag.DBStuff)
+        {
+            <li>item</li>
+        }*@
         </div>
     </div>
     <div class="col-md-4">
@@ -22,4 +36,35 @@
         <p>YBeckoned PathBeckoned PathBeckoned Path.</p>
         <p><a class="btn btn-default" href="https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final">Beckoned Path &raquo;</a></p>
     </div>
+</div>
+
+<div class="row">
+    @using (Html.BeginForm("Create", "Home", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>First Name: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.FirstName)
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.LastName)
+                </td>
+            </tr>
+            <tr>
+                <td>Location: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Comment)
+
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    }
 </div>
