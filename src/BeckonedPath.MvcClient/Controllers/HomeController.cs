@@ -45,7 +45,7 @@ namespace BeckonedPath.MvcClient.Controllers
                 FirstName = "bob",
                 LastName = "sirue",
                 Comment = "comment",
-                Email = "8ionkmill",
+                Email = "8ionkmills",
                 Event = "events",
                 FutureEvent = "asd",
                 PastEvent = "dsw"
@@ -53,12 +53,12 @@ namespace BeckonedPath.MvcClient.Controllers
             _db.Add(saveToDb);
             _db.SaveChanges();
 
-            if (ModelState.IsValid)
-            {
-                _db.Add(users);
-                _db.SaveChanges();
-                return RedirectToAction(nameof(Index));
-            }
+            //if (ModelState.IsValid)
+            //{
+            //    _db.Add(users);
+            //    _db.SaveChanges();
+            //    return RedirectToAction(nameof(Index));
+            //}
 
             return View();
         }
